@@ -27,7 +27,7 @@ export default function Layout() {
           height: 70,
           paddingBottom: 5,
           paddingTop: 8,
-          shadowColor: '#000',
+          shadowColor: '#102E50',
           shadowOffset: { width: 0, height: -2 },
           shadowOpacity: 0.1,
           shadowRadius: 4,

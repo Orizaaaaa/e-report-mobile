@@ -25,11 +25,11 @@ module.exports = {
         Gil: ['Gil', 'sans-serif'],
       },
       backgroundColor: {
-        primary: '#24BAEC',
+        primary: '#102E50',
         light: '#F7F7F9'
       },
       borderColor: {
-        primary: '#24BAEC',
+        primary: '#102E50',
       },
       colors: {
         primary: '#102E50',
