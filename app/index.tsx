@@ -2,7 +2,7 @@ import { useNavigation } from "expo-router";
 import { useRef } from "react";
 import { Dimensions, Image, ScrollView, Text, View } from "react-native";
 const { width, height } = Dimensions.get('window');
-import { MaterialIcons } from '@expo/vector-icons';
+import { Feather, MaterialIcons } from '@expo/vector-icons';
 
 export default function Index() {
   const ref: any = useRef();
@@ -38,7 +38,8 @@ export default function Index() {
 
       <View className="mt-5 flex flex-row items-center space-x-2 gap-2">
         <View className="flex-1 border-2 border-gray-300 h-14 justify-center px-2 rounded-lg">
-          <View>
+          <View className="flex-row items-center gap-2">
+            <Feather name="search" size={24} color="gray" />
             <Text className="text-gray-400" >Cari apa saja...</Text>
           </View>
         </View>
