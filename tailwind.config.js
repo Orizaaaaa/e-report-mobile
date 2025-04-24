@@ -1,10 +1,41 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  // NOTE: Update this to include the paths to all of your component files.
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    fontFamily: {
+      satoshi: ["Satoshi", "sans-serif"],
+    },
+    screens: {
+      "2xsm": "375px",
+      xsm: "425px",
+      "3xl": "2000px",
+      ...defaultTheme.screens,
+    },
+    extend: {
+      textColors: {
+        primary: '#102E50',
+        secondary: '#1B1E28'
+      },
+      fontFamily: {
+        Geometric: ['Geometric', 'sans-serif'],
+        Inter: ['Inter', 'sans-serif'],
+        Gil: ['Gil', 'sans-serif'],
+      },
+      backgroundColor: {
+        primary: '#24BAEC',
+        light: '#F7F7F9'
+      },
+      borderColor: {
+        primary: '#24BAEC',
+      },
+      colors: {
+        primary: '#102E50',
+        secondary: '#1B1E28'
+      }
+    },
   },
   plugins: [],
 }
