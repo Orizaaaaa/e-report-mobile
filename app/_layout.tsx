@@ -1,11 +1,17 @@
 // app/_layout.tsx
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+
 import '../global.css'
 const iconMap = {
   index: 'home',
-  profile: 'person',
+  report: 'camera-outline',
+  profile: 'person-outline',
 } as const;
+
+
+
+
 export default function Layout() {
   return (
     <Tabs
@@ -36,7 +42,8 @@ export default function Layout() {
       })}
     >
       <Tabs.Screen name="index" options={{ title: 'Beranda' }} />
-      <Tabs.Screen name="report" options={{ title: 'Laporan' }} />
+      <Tabs.Screen name="report" options={{ title: 'Buat Laporan' }} />
+      <Tabs.Screen name="profile" options={{ title: 'Profile' }} />
     </Tabs>
   );
 }
