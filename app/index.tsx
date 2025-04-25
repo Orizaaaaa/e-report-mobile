@@ -3,9 +3,12 @@ import { useRef } from "react";
 import { Dimensions, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 const { height } = Dimensions.get('window');
 import { Feather, MaterialIcons } from '@expo/vector-icons';
-import CardBuilding from "@/components/fragments/CardBuilding";
+import CardBuilding from "@/components/fragments/CardBuilding/CardBuilding";
+
+
 
 export default function Index() {
+  const navigation: any = useNavigation()
   const ref: any = useRef();
   const data = [
     {
@@ -16,8 +19,38 @@ export default function Index() {
       title: 'Jalan Rusak',
       desc: 'Lorem ipsum dolor s...'
     },
+    {
+      title: 'Jalan Rusak',
+      desc: 'Lorem ipsum dolor s...'
+    },
+    {
+      title: 'Jalan Rusak',
+      desc: 'Lorem ipsum dolor s...'
+    },
+
   ]
-  const navigation: any = useNavigation()
+
+
+
+  const layananData = [
+    {
+      image: require('../assets/images/galeri-icon.png'),
+      label: 'Galeri'
+    },
+    {
+      image: require('../assets/images/building-icon.png'),
+      label: 'Bangunan'
+    },
+    {
+      image: require('../assets/images/alert.png'),
+      label: 'Peringatan'
+    },
+    {
+      image: require('../assets/images/lainnya.png'),
+      label: 'Lainnya'
+    },
+  ];
+
   return (
     <ScrollView className='pt-4 px-2 bg-white' style={{ height: height }} >
       <View className='flex-row items-center w-full justify-between  p-1   ' >
@@ -59,20 +92,38 @@ export default function Index() {
         </View>
       </View>
 
-      <Text className="text-lg font-semibold my-5">Laporan Prioritas 🔥</Text>
-
-      <View className="flex flex-row flex-wrap -mx-1">
-        {data.map((item: any, index: any) => (
-          <View key={index} className="w-1/2 px-1 mb-2">
-            <CardBuilding
-              title={item.title}
-              desc={item.desc}
-              location={() => navigation.navigate('report')}
-            />
-          </View>
-        ))}
+      {/* layanan */}
+      <View>
+        <Text className="text-lg font-semibold my-5 text-slate-600">Layanan</Text>
+        <View className="flex-row justify-between">
+          {layananData.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              className="w-20 h-20 p-3 rounded-xl bg-white shadow-xl shadow-slate-500"
+            >
+              <Image
+                className="w-full h-full rounded-lg"
+                source={item.image}
+                resizeMode="cover"
+              />
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
 
+      <View className="bg-white shadow-xl shadow-slate-600 h-24 my-5 rounded-xl p-5">
+
+      </View>
+
+      <Text className="text-lg font-semibold mb-5 text-slate-600">Laporan Prioritas 🔥</Text>
+
+      {/* data belum di map */}
+      <View className="flex flex-row flex-wrap ">
+        {data.map((item: any, index: any) => (
+          <CardBuilding key={index} title={item.title}
+            desc={item.desc} location={() => navigation.navigate('report')} />
+        ))}
+      </View>
 
 
     </ScrollView>
