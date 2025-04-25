@@ -56,10 +56,10 @@ export default function Index() {
       <View className="mb-32">
         <View className='flex-row items-center w-full justify-between  p-1   ' >
 
-          <View className="gap-5 flex-col" >
+          <View className="gap-3 flex-col" >
             <Text className="text-2xl">Hello 👋 ! </Text>
             <View className="flex-col gap-1">
-              <Text className="text-3xl font-semibold text-primary">Diding Kautsar </Text>
+              <Text className="text-3xl font-semibold text-primary">Ahmad Kautsar </Text>
               <Text className="text-sm text-gray-500">📍Pamulang, Benda Baru, Tangerang Selatan </Text>
             </View>
           </View>
@@ -112,7 +112,7 @@ export default function Index() {
           </View>
         </View>
 
-        <View className="bg-white shadow-xl shadow-slate-600 h-24 my-5 rounded-xl p-5">
+        <View className="bg-white shadow-xl shadow-slate-600 h-32 my-6 rounded-xl p-5">
 
         </View>
 
