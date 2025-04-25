@@ -28,10 +28,9 @@ export default function Layout() {
             shadowOpacity: 0.1,
             shadowRadius: 4,
             elevation: 10,
-            width: '90%',
             marginBottom: 10,
             position: 'absolute',
-            marginHorizontal: 20, // Android
+            marginHorizontal: 10, // Android
           },
 
           headerShown: false,
