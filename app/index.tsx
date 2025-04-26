@@ -4,6 +4,10 @@ import { Dimensions, Image, ScrollView, Text, TouchableOpacity, View } from "rea
 const { height } = Dimensions.get('window');
 import { Feather, MaterialIcons } from '@expo/vector-icons';
 import CardBuilding from "@/components/fragments/CardBuilding/CardBuilding";
+import GaleriIcon from '../assets/images/galeri.svg';
+import ReportIcon from '../assets/images/report.svg';
+import BuildingIcon from '../assets/images/building.svg';
+import OtherIcon from '../assets/images/other.svg';
 
 
 
@@ -34,22 +38,24 @@ export default function Index() {
 
   const layananData = [
     {
-      image: require('../assets/images/galeri-icon.png'),
-      label: 'Galeri'
+      image: <ReportIcon width="100%" height="100%" fill="black" />,
+      label: 'Laporan'
     },
     {
-      image: require('../assets/images/building-icon.png'),
+      image: <BuildingIcon width="100%" height="100%" fill="black" />,
       label: 'Bangunan'
     },
     {
-      image: require('../assets/images/alert.png'),
-      label: 'Peringatan'
+      image: <GaleriIcon width="100%" height="100%" fill="black" />,
+      label: 'Galeri desa'
     },
+
     {
-      image: require('../assets/images/lainnya.png'),
+      image: <OtherIcon width="100%" height="100%" fill="black" />,
       label: 'Lainnya'
     },
   ];
+  console.log(GaleriIcon);
 
   return (
     <ScrollView className='pt-4 px-2 bg-white' style={{ height: height }} >
@@ -94,25 +100,22 @@ export default function Index() {
         </View>
 
         {/* layanan */}
-        <View>
+        <View className="px-2">
           <Text className="text-lg font-semibold my-5 text-slate-600">Layanan</Text>
-          <View className="flex-row justify-between">
+          <View className="flex-row flex-wrap justify-between">
             {layananData.map((item, index) => (
-              <TouchableOpacity
-                key={index}
-                className="w-20 h-20 p-3 rounded-xl bg-white shadow-xl shadow-slate-500"
-              >
-                <Image
-                  className="w-full h-full rounded-lg"
-                  source={item.image}
-                  resizeMode="cover"
-                />
-              </TouchableOpacity>
+              <View key={index} className="items-center w-[20%] my-2">
+                <TouchableOpacity className="w-24 h-20 p-3 rounded-xl bg-white shadow-xl shadow-slate-500">
+                  {item.image}
+                </TouchableOpacity>
+                <Text className="mt-2 text-sm text-center text-slate-600">{item.label}</Text>
+              </View>
             ))}
           </View>
+
         </View>
 
-        <View className="bg-white shadow-xl shadow-slate-600 h-32 my-6 rounded-xl p-5">
+        <View className="bg-primary  h-36 my-6 rounded-xl p-5">
 
         </View>
 
